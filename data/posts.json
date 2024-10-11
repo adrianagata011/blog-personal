@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "Mi primera publicación",
+      "content": "Este es el contenido de mi primera publicación en el blog.",
+      "author": "Adrián M. Agata",
+      "category": "Desarrollo",
+      "date": "2024-10-01",
+      "comments": [
+        {
+          "author": "Usuario1",
+          "text": "¡Muy buena publicación!"
+        },
+        {
+          "author": "Usuario2",
+          "text": "Gracias por compartir tus conocimientos."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Introducción a Node.js",
+      "content": "En este post, explico los fundamentos de Node.js.",
+      "author": "Adrián M. Agata",
+      "category": "Tecnología",
+      "date": "2024-10-05",
+      "comments": [
+        {
+          "author": "Usuario3",
+          "text": "Muy útil, gracias por el tutorial."
+        }
+      ]
+    }
+  ]
+  

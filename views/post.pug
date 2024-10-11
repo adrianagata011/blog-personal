@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  .post
+    h2= post.title
+    p= post.content
+    if post.comments.length
+      h3 Comentarios
+      ul
+        each comment in post.comments
+          li
+            strong= comment.author
+            |  - 
+            |  #{comment.text}
+    else
+      p No hay comentarios aún.
+
+  form(method='POST', action=`/blog/${post.id}/comment`)
+    label(for='author') Nombre:
+    input(type='text', name='author', required)
+    label(for='text') Comentario:
+    textarea(name='text', required)
+    button(type='submit') Añadir Comentario
