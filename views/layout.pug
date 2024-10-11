@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Blog Personal
+      nav
+        ul
+          li
+            a(href='/') Inicio
+          li
+            a(href='/blog') Publicaciones
+          li
+            a(href='/user/register') Registro
+          li
+            a(href='/user/login') Iniciar Sesión
+
+    main
+      block content
+
+    footer
+      p &copy; 2024 Blog Personal

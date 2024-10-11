@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# JSON files (si deseas ignorar ciertos archivos JSON)
+# Si necesitas ignorar archivos JSON específicos, puedes listarlos aquí
+# Por ejemplo:
+# data.json
+
+# Otros archivos que no quieras subir
