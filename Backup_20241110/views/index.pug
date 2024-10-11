@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/styles.css')
+  body
+    h1= title
+
+    // Lista de posts
+    ul
+      each post, i in posts
+        li
+          h2= post.title
+          p= post.content
+          p Autor: #{post.author}
+          p Fecha: #{post.date}
+          // Agregar botón para eliminar post
+          form(action=`/blog/delete/${post.id}`, method='POST')
+            button(type='submit') Eliminar Post
+
+    // Botón para agregar post
+    h2 Agregar un nuevo post
+    form(action='/blog/add', method='POST')
+      input(type='text', name='title', placeholder='Título')
+      input(type='text', name='content', placeholder='Contenido')
+      input(type='text', name='author', placeholder='Autor')
+      button(type='submit') Agregar Post
