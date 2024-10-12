@@ -1,0 +1,24 @@
+doctype html
+html(lang="es")
+  head
+    title Blog Personal
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      header
+        h1 Blog Personal
+        nav
+          ul
+            if !user
+              li: a(href="/users/register") Registrar
+              li: a(href="/users/login") Iniciar sesión
+            else
+              li: a(href="/posts") Ver Publicaciones
+              li: | Bienvenido, #{user.username}!
+              li: a(href="/users/logout") Cerrar sesión
+
+      // Contenido de las páginas
+      block content
+
+      footer
+        p © 2024 Mi Blog Personal. Todos los derechos reservados.

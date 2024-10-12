@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h2 Registrarse
+  form(action="/users/register", method="POST")
+    div
+      label(for="username") Nombre de usuario:
+      input(type="text", name="username", required)
+    div
+      label(for="password") Contraseña:
+      input(type="password", name="password", required)
+    div
+      button(type="submit") Registrar
+
+  // Mensajes de error, si los hay
+  if error
+    div.alert.alert-danger
+      | #{error}
+
+  p
+    | ¿Ya tienes una cuenta? 
+    a(href="/users/login") Inicia sesión aquí

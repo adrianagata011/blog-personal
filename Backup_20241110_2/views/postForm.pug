@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h2= isEdit ? 'Editar Publicación' : 'Crear Nueva Publicación'
+  
+  form(action=isEdit ? `/posts/${post.id}/edit` : '/posts/new', method="POST")
+    div
+      label(for="title") Título:
+      input(type="text", name="title", value=isEdit ? post.title : '', required)
+    div
+      label(for="content") Contenido:
+      textarea(name="content", required)= isEdit ? post.content : ''
+    div
+      label(for="category") Categoría:
+      select(name="category", required)
+        option(value="ventas" selected=isEdit && post.category === 'ventas') Ventas
+        option(value="marketing" selected=isEdit && post.category === 'marketing') Marketing
+        option(value="recursos_humanos" selected=isEdit && post.category === 'recursos_humanos') Recursos Humanos
+        option(value="finanzas" selected=isEdit && post.category === 'finanzas') Finanzas
+        option(value="auditoria" selected=isEdit && post.category === 'auditoria') Auditoría
+
+    div
+      button(type="submit") = isEdit ? 'Actualizar Publicación' : 'Crear Publicación'
+
+  // Enlace para volver a la lista de publicaciones
+  a(href="/posts") Volver a las Publicaciones

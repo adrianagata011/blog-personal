@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h2= post.title
+  p.autor Escrito por #{post.author} el #{post.date.toLocaleString()}
+  div.post-content
+    p= post.content
+
+  h3 Comentarios
+  if post.comments.length > 0
+    ul
+      each comment in post.comments
+        li.comment
+          strong #{comment.username}:
+          |  #{comment.text} 
+          small (#{comment.date.toLocaleString()})
+  else
+    p No hay comentarios todavía.
+
+  // Formulario para agregar un nuevo comentario
+  h3 Agregar un Comentario
+  form(action=`/posts/${post.id}/comment`, method="POST")
+    div
+      label(for="comment") Comentario:
+      textarea(name="comment", required)
+    div
+      button(type="submit") Enviar Comentario
+
+  // Enlace para volver a la lista de publicaciones
+  a(href="/posts") Volver a las Publicaciones
