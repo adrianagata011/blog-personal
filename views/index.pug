@@ -1,9 +1,31 @@
 doctype html
 html
     head
-        title Bienvenido
+        title Bienvenido al Blog
         link(rel="stylesheet", href="/styles.css")
     body
         .container
-            h1 Bienvenido Usuario #{username}
+            h1 Bienvenido al Blog            
+            h2 Crear nueva publicación
+            form(action="/create", method="POST")
+                label(for="title") Título:
+                input(type="text", name="title", required)
+                label(for="content") Contenido:
+                textarea(name="content", required)
+                button(type="submit") Crear Publicación
+            
+            // Listado de publicaciones
+            h2 Publicaciones
+            each post, index in posts
+                .post
+                    h3 #{post.title}
+                    p #{post.content}
+                    form(action=`/delete/${index}`, method="POST")
+                        button(type="submit") Eliminar
+                    a(href=`/edit/${index}`) Editar
+
+            // Mensaje de error o éxito
+            if message
+                p.message #{message}
+
             a(href="/") Regresar a Login

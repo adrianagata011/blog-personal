@@ -5,65 +5,104 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    overflow-y: auto; /* Mostrar barra de scroll vertical */
 }
 
 .container {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    transition: transform 0.3s;
+    margin: 20px;
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #333;
+    color: #343a40;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 label {
-    margin: 10px 0 5px;
+    margin-bottom: 5px;
+    color: #495057;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    background-color: white;
+    outline: none;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
     background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .message {
     margin-top: 15px;
-    color: red;
+    color: #28a745;
+    font-weight: 500;
 }
 
 .error-message {
-    color: red;
     margin-top: 15px;
+    color: #dc3545;
     font-weight: bold;
+    font-size: 14px;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Aseguramos que el body permita scroll si el contenido es alto */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto; /* Habilitar el scroll vertical */
 }
