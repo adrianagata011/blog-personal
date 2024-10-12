@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h2 Iniciar Sesión
+  form(action="/users/login", method="POST")
+    div
+      label(for="username") Nombre de usuario:
+      input(type="text", name="username", required)
+    div
+      label(for="password") Contraseña:
+      input(type="password", name="password", required)
+    div
+      button(type="submit") Iniciar sesión
+
+  // Mensajes de error, si los hay
+  if error
+    div.alert.alert-danger
+      | #{error}
+
+  p
+    | ¿No tienes una cuenta? 
+    a(href="/users/register") Regístrate aquí

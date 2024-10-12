@@ -1,0 +1,36 @@
+doctype html
+html(lang="es")
+  head
+    title Blog Personal
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      h1 Bienvenido a mi Blog Personal
+      p Comparte tus ideas y publica contenido en diferentes categorías de tu interés.
+      
+      // Enlaces de navegación
+      if !user
+        p
+          a(href="/users/register") Registrar
+          |  | 
+          a(href="/users/login") Iniciar sesión
+      else
+        p
+          | Bienvenido, #{user.username}!
+          | | 
+          a(href="/posts") Ver Publicaciones
+          | | 
+          a(href="/users/logout") Cerrar sesión
+
+      hr
+      p Aquí puedes encontrar artículos sobre:
+      ul
+        li Ventas
+        li Marketing
+        li Recursos Humanos
+        li Finanzas
+        li Auditoría
+
+      hr
+      footer
+        p © 2024 Mi Blog Personal. Todos los derechos reservados.

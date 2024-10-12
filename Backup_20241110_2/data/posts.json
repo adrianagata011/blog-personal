@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "title": "Publicación de ventas",
+      "content": "Contenido sobre ventas",
+      "author": "johndoe",
+      "category": "ventas",
+      "comments": [
+        {
+          "author": "janedoe",
+          "content": "Comentario interesante.",
+          "date": "2024-10-11 14:30"
+        }
+      ]
+    }
+  ]
