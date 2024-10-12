@@ -1,38 +1,29 @@
 [
   {
-    "username": "usuario1",
-    "password": "pepe"
-  },
-  {
-    "username": "usuario2",
-    "password": "pepe"
-  },
-  {
-    "username": "pepe",
-    "password": "pepe1"
-  },
-  {
-    "username": "Adrian",
-    "password": "agata"
+    "username": "admin",
+    "password": "admin"
   },
   {
     "username": "adrian",
-    "password": "hola"
+    "password": "adrian01"
   },
   {
-    "username": "adrian2",
-    "password": "pepe"
-  },
+    "username": "ezequiel",
+    "password": "ezequiel01"
+  }
+  ,
   {
-    "username": "sdfasdfsadfsda",
-    "password": "sadfsadfasdfa"
-  },
+    "username": "trini",
+    "password": "trini01"
+  }
+  ,
   {
-    "username": "fsdfasdf",
-    "password": "sadfasd"
-  },
+    "username": "alejandro",
+    "password": "alejandro01"
+  }
+  ,
   {
-    "username": "sdfsadfsa",
-    "password": "sdfasdf"
+    "username": "richard",
+    "password": "richard01"
   }
 ]

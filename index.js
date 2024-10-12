@@ -91,12 +91,14 @@ app.get('/posts', (req, res) => {
     res.render('index', { posts, currentUser}); // Pasar las publicaciones a la vista
 });
 
+// Ruta para crear publicaciones
+
 app.post('/create', (req, res) => {
     const { title, content } = req.body;
     const posts = loadPosts();
     if (req.session.username) {
         // Agregar el post con el autor sacado de la sesión
-        posts.push({ title, content, author: req.session.username });
+        posts.push({ title, content, author: req.session.username, comments: [] });
         savePosts(posts);
         res.redirect('/posts');
     } else {
@@ -107,7 +109,11 @@ app.post('/create', (req, res) => {
 app.get('/edit/:index', (req, res) => {
     const index = req.params.index;
     const posts = loadPosts();
+    // Verificar si la publicación existe
     const post = posts[index];
+    if (!post) {
+        return res.status(404).send('La publicación no existe.');
+    }
     const username = req.session.username;
     if (post.author === username) {
         res.render('edit', { post, index });
@@ -120,32 +126,72 @@ app.post('/edit/:index', (req, res) => {
     const index = req.params.index;
     const { title, content } = req.body;
     const posts = loadPosts();
+
+    // Verificar si la publicación existe
     const post = posts[index];
+    if (!post) {
+        return res.status(404).send('La publicación no existe.');
+    }
+
     const username = req.session.username;
     if (post.author === username) {
         posts[index] = { 
             title: title,
             content: content,
-            author: post.author };
+            author: post.author,
+            comments: post.comments 
+        };
         savePosts(posts);
         res.redirect('/posts');
+
     } else {
-        res.send('No tienes permiso para editar esta publicación.');
+        res.status(403).send('No tienes permiso para editar esta publicación.');
+//        res.send('No tienes permiso para editar esta publicación.');
     }
 });
 
 app.post('/delete/:index', (req, res) => {
     const index = req.params.index;
     const posts = loadPosts();
+
+    // Verificar si la publicación existe
     const post = posts[index];
+    if (!post) {
+        return res.status(404).send('La publicación no existe.');
+    }
+
     const username = req.session.username;
     if (post.author === username) {
         posts.splice(index, 1);
         savePosts(posts);
         res.redirect('/posts');
     } else {
-        res.send('No tienes permiso para eliminar esta publicación.');
+        res.status(403).send('No tienes permiso para eliminar esta publicación.');
     }
+});
+
+// Recibir y procesar los comentarios
+
+app.post('/comment/:index', (req, res) => {
+    const index = req.params.index;
+    const { comment } = req.body;
+    const posts = loadPosts();
+    const post = posts[index];
+    const username = req.session.username; // Usuario autenticado
+
+    // Crear el nuevo comentario
+    const newComment = {
+        author: username,
+        content: comment,
+        date: new Date().toLocaleString() // Fecha y hora actual
+    };
+
+    // Añadir el comentario al array de comentarios de la publicación
+    post.comments.push(newComment);
+    savePosts(posts); // Guardar los cambios en el archivo
+
+    // Redirigir a la página de publicaciones
+    res.redirect('/posts');
 });
 
 app.get('/logout', (req, res) => {

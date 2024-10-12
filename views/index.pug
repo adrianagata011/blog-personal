@@ -34,14 +34,34 @@ block content
                 tr 
                     td 
                         p Autor: #{post.author}
+                tr 
+                    td 
+                        if post.comments.length > 0 
+                            h4 Comentarios:
+                            ul
+                                each comment in post.comments
+                                    li
+                                        p #{comment.author} - #{comment.date}
+                                        p #{comment.content}
+                        else
+                            p No hay comentarios aún.
+                tr 
+                    td 
+                        if post.author !== currentUser
+                            form(action=`/comment/${index}`, method="POST")
+                                label(for="comment") Añadir comentario:
+                                textarea(name="comment", required)
+                                button(type="submit") Comentar
+                        else
+                            p No puedes agregar comentarios a tu propia publicación.
             table 
                 tr 
                     td 
                         div.button-container
                             if post.author === currentUser
                                 form(action=`/delete/${index}`, method="POST")
-                                button(type="submit") Eliminar
-                                a(href=`/edit/${index}`, style="button") Editar
+                                    button(type="submit") Eliminar
+                                a(href=`/edit/${index}`, class="btn") Editar
     table 
         tr 
             td 
