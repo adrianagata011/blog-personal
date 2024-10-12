@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Registro
+    form(action="/register", method="POST")
+        label(for="newUsername") Usuario:
+        input(type="text", name="newUsername", required)
+        label(for="newPassword") Contraseña:
+        input(type="password", name="newPassword", required)
+        button(type="submit") Registrarse
+    a(href="/") Regresar a Iniciar Sesión
