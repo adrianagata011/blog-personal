@@ -1,0 +1,38 @@
+[
+  {
+    "username": "usuario1",
+    "password": "pepe"
+  },
+  {
+    "username": "usuario2",
+    "password": "pepe"
+  },
+  {
+    "username": "pepe",
+    "password": "pepe1"
+  },
+  {
+    "username": "Adrian",
+    "password": "agata"
+  },
+  {
+    "username": "adrian",
+    "password": "hola"
+  },
+  {
+    "username": "adrian2",
+    "password": "pepe"
+  },
+  {
+    "username": "sdfasdfsadfsda",
+    "password": "sadfsadfasdfa"
+  },
+  {
+    "username": "fsdfasdf",
+    "password": "sadfasd"
+  },
+  {
+    "username": "sdfsadfsa",
+    "password": "sdfasdf"
+  }
+]

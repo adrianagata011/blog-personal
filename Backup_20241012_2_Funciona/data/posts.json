@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Primera publicación del blog",
+    "content": "Pautas generales para escribir publicaciones en este blog",
+    "author": "admin",
+    "comments": [
+      {
+        "author": "ezequiel",
+        "content": "muy buena publicacíon",
+        "date": "10/12/2024, 12:04:44 PM"
+      },
+      {
+        "author": "adrian",
+        "content": "excelente contenido",
+        "date": "10/12/2024, 12:22:19 PM"
+      }
+    ]
+  },
+  {
+    "title": "La IA como herramienta de desarrollo",
+    "content": "No hay que decir que este blog fue hecho con la ayuda de ChatGPT",
+    "author": "richard",
+    "comments": [
+      {
+        "author": "alejandro",
+        "content": "Comentario para borrar antes de entregar",
+        "date": "10/12/2024, 12:18:18 PM"
+      },
+      {
+        "author": "adrian",
+        "content": "Borrar urgente este post!",
+        "date": "10/12/2024, 12:24:57 PM"
+      }
+    ]
+  }
+]

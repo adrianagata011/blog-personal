@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 Registro
+    form(action="/register", method="POST")
+        table 
+            tr 
+                td 
+                    label(for="newUsername") Usuario:
+                td 
+                    input(type="text", name="newUsername", required)
+            tr 
+                td 
+                    label(for="newPassword") Contraseña:
+                td 
+                    input(type="password", name="newPassword", required)
+        table 
+            tr 
+                td 
+                    button(type="submit") Registrarse
+                td 
+                    a(href="/", style="button") Regresar

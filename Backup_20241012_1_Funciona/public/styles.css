@@ -1,0 +1,196 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #e0f7e9;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h2, h3 {
+    text-align: center;
+    color: rgba(70, 130, 90);
+}
+
+p {
+    text-align: left;
+    padding: 0.1rem;
+}
+
+a {
+    color: #007bff;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:active {
+    color: #ff0000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    word-wrap: break-word; /* Permitir el ajuste del texto */
+    word-break: break-all; /* Romper palabras largas */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #495057;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+a {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+a.hover {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:active {
+    color: white;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    background-color: white;
+    outline: none;
+}
+
+.button-container {
+    display: flex;         /* Usar Flexbox para alinear los botones */
+    gap: 10px;             /* Espacio entre los botones */
+    justify-content: center; /* Alinea los botones a la izquierda (o puedes usar center o flex-end según lo que necesites) */
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el pie de página, centrado y con texto más pequeño */
+footer {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}

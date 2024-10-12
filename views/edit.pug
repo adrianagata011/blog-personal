@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Editar Publicación
+
+    form(action=`/edit/${index}`, method="POST")
+        label(for="title") Título:
+        input(type="text", name="title", value=post.title, required)
+        label(for="content") Contenido:
+        textarea(name="content", required) #{post.content}
+        button(type="submit") Guardar Cambios
+
+    a(href="/posts") Volver a las publicaciones
