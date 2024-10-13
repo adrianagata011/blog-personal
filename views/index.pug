@@ -3,7 +3,7 @@ extends layout.pug
 block content
     h1 Bienvenido al Blog Personal
     h2 Crear nueva publicación
-    form(action="/create", method="POST")
+    form(action="/blog/create", method="POST")
         table 
             tr 
                 td 
@@ -48,7 +48,7 @@ block content
                 tr 
                     td 
                         if post.author !== currentUser
-                            form(action=`/comment/${index}`, method="POST")
+                            form(action=`/blog/comment/${index}`, method="POST")
                                 label(for="comment") Añadir comentario:
                                 textarea(name="comment", required)
                                 button(type="submit") Comentar
@@ -59,10 +59,10 @@ block content
                     td 
                         div.button-container
                             if post.author === currentUser
-                                form(action=`/delete/${index}`, method="POST")
+                                form(action=`/blog/delete/${index}`, method="POST")
                                     button(type="submit") Eliminar
-                                a(href=`/edit/${index}`, class="btn") Editar
+                                a(href=`/blog/edit/${index}`, class="btn") Editar
     table 
         tr 
             td 
-                a(href="/logout") Salir del Blog
+                a(href="/user/logout") Salir del Blog

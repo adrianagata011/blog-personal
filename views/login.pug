@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Iniciar Sesión
-    form(action="/login", method="POST")
+    form(action="/user/login", method="POST")
         table 
             tr 
                 td 
@@ -19,5 +19,5 @@ block content
                 td 
                     button(type="submit") Iniciar Sesión
                 td 
-                    a(href="/register", stype="button") Regístrate
+                    a(href="/user/register", stype="button") Regístrate
 
